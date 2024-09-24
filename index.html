@@ -8,10 +8,36 @@
 NurOS [Version 1.0.0]
 (c) 2020 NurMi Company. All rights reserved.
 
-C:\Users\user&gt;echo Hello, World!
-Hello, World!
+        function runCommand() {
+    var input = document.getElementById("cmd").value;
+    var output = document.getElementById("output");
+    output.innerHTML += "Running command: " + input + "<br>";
 
-C:\Users\user&gt;
+    // Simulate different commands
+    switch(input.trim().toLowerCase()) {
+        case "hello":
+            output.innerHTML += "Hello there! Type 'help' to see available commands.<br>";
+            break;
+        case "help":
+            output.innerHTML += "Available commands: hello, help, clear<br>";
+            break;
+        case "clear":
+            output.innerHTML = "";
+            break;
+        default:
+            output.innerHTML += "Command not recognized.<br>";
+    }
+
+    document.getElementById("cmd").value = ""; // Clear input
+}
+</script>
+</head>
+<body>
+<h2>Simulated Terminal</h2>
+<input type="text" id="cmd" onkeydown="if(event.key === 'Enter') runCommand()">
+<button onclick="runCommand()">Run Command</button>
+<div id="output" style="white-space: pre-wrap; background: #000; color: #0F0; padding: 10px;"></div>
+
     </pre>
 </body>
 </html>
