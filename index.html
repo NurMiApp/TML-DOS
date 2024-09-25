@@ -1,45 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Terminal-DOS Emulation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal-DOS Emulation</title>
 </head>
-<body bgcolor="black" text="white" style="font-family: 'Courier New', monospace;">
-    <pre>
-NurOS [Version 1.0.0]
-(c) 2020 NurMi Company. All rights reserved.
-    </pre>
-
-        function runCommand() {
-    var input = document.getElementById("cmd").value;
-    var output = document.getElementById("output");
-    output.innerHTML += "Running command: " + input + "<br>";
-
-    // Simulate different commands
-    switch(input.trim().toLowerCase()) {
-        case "hello":
-            output.innerHTML += "Hello there! Type 'help' to see available commands.<br>";
-            break;
-        case "help":
-            output.innerHTML += "Available commands: hello, help, clear<br>";
-            break;
-        case "clear":
-            output.innerHTML = "";
-            break;
-        default:
-            output.innerHTML += "Command not recognized.<br>";
-    }
-
-    document.getElementById("cmd").value = ""; // Clear input
-}
-    
-</script>
-</head>
-<body>
-<h2>Simulated Terminal</h2>
-<input type="text" id="cmd" onkeydown="if(event.key === 'Enter') runCommand()">
-<button onclick="runCommand()">Run Command</button>
-<div id="output" style="white-space: pre-wrap; background: #000; color: #0F0; padding: 10px;"></div>
-
-    </pre>
+<body style="background-color: black; color: lime; font-family: 'Courier New', Courier, monospace; font-size: 16px; padding: 20px;">
+    <p>C:\>command</p>
+    <p style="color: red;">'command' is not recognized as an internal or external command, operable program or batch file.</p>
 </body>
 </html>
